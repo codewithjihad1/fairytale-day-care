@@ -262,9 +262,6 @@ img.about-img-1 {
     border-end-end-radius: 10px;
     border-top-left-radius: 10px;
 }
-.program-item:nth-child(2){
-    margin-top: 100px;
-}
 .program-item-img img {
     border-top-left-radius: 10px;
 }
