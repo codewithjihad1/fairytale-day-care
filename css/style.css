@@ -15,6 +15,7 @@ img {
     max-width: 1070px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
     clear: both;
 }
 .main-wrap {
@@ -25,22 +26,26 @@ img {
 
 /* =================Header Section Start================= */
 .header-wrap {
-    box-shadow: 0 0 5px rgba(0,0,0,.25);
+    box-shadow: 0 0 15px rgba(0,0,0,.25);
     float: left;
     width: 100%;
     background: #fff;
+    position: relative;
+    z-index: 99;
 }
 .logo{
     margin: 0 50px;
-    position: relative;
+}
+.logo img{
+    width: 125px;
 }
 .logo::before {
     content: url(../img/logo-bg.png);
     position: absolute;
     left: 50%;
-    top: 152%;
+    top: 95px;
     z-index: 1;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 .header-inner {
     display: flex;
@@ -88,6 +93,8 @@ li.nav-links a{
 .hero-wrap{
     background: url(../img/hero-bg.png) no-repeat center bottom;
     background-size: cover;
+    position: relative;
+    z-index: 9;
 }
 .hero-inner{
     min-height: 650px;
@@ -120,14 +127,14 @@ li.nav-links a{
     background: #7AB6C0;
     position: relative;
     margin: -15px 0 0;
-    z-index: -1;
+    z-index: 0;
 }
 .facts-wrap .common-wrap{
     max-width: 1240px;
 }
 .facts-inner{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 35px;
     padding: 70px 0;
 }
@@ -135,6 +142,7 @@ li.nav-links a{
     text-align: center;
     position: relative;
     padding: 50px 60px 70px;
+    overflow: hidden;
 }
 .fact-item-img{
     width: 40px;
@@ -145,7 +153,7 @@ li.nav-links a{
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: -1;
 }
 .fact-item .fact-title{
@@ -225,7 +233,7 @@ img.about-img-1 {
     z-index: -1;
 }
 .program-inner{
-    padding: 50px 0;
+    padding: 50px 20px;
 }
 .program-title{
     margin-bottom: 60px;
@@ -279,6 +287,7 @@ img.about-img-1 {
 .program-item .program-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 0;
     border-top: 1px solid #E3E3E3;
 }
@@ -326,7 +335,7 @@ img.about-img-1 {
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 .footer-text{
     list-style: none;
@@ -360,4 +369,132 @@ img.about-img-1 {
 .footer-icon i {
     font-size: 20px;
     color: #fff;
+}
+
+
+/* ====================================
+Facility Page Css start
+==================================== */
+.facility-wrap {
+    float: left;
+    width: 100%;
+    padding: 50px 0;
+    background: #FAFAFA;
+}
+.facility-title{
+    margin-bottom: 60px;
+}
+.facility-title h2{
+    font-size: 40px;
+    color: #333333;
+    text-align: center;
+    position: relative;
+}
+.facility-title h2::before {
+    content: url(../img/facility-title-bg.png);
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+}
+.facility-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px 50px;
+}
+.facility-content .facility-item{
+    padding: 10px 10px 60px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.facility-item .facility-img {
+    position: relative;
+    overflow:hidden;
+    display: grid;
+}
+.facility-item .facility-img::after {
+    content: url(../img/facility-hover-icon.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    /* transition-delay: .2s; */
+}
+.facility-item .facility-img::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    background: #00000096;
+    transition: all 0.4s ease;
+}
+.facility-item:hover .facility-img::before {
+    top: 0;
+}
+.facility-item:hover .facility-img::after {
+    opacity: 1;
+}
+
+
+
+
+/* =============================================
+Responsive Layout Design 
+============================================= */
+/* Laptop Layout design */
+@media(max-width: 1024px) {
+    .footer-text {
+        display: block;
+    }
+    .footer-text li::before{
+        display: none;
+    }
+    .footer-text li a{
+        font-size: 12px;
+    }
+}
+
+/* Tablet layout design */
+@media(max-width: 768px){    
+    .about-text {
+        width: 100%;
+        float: none;
+        margin-top: 30px;
+    }
+    .about-img .about-img-2 {
+        top: 100px;
+    }
+    .program-item {
+        width: 47%;
+    }
+    .program-content {
+        background: none;
+    }
+    .program-info .more-info-btn a {
+        padding: 8px 7px;
+    }
+}
+
+/* small Tablet layout */
+@media(max-width: 650px){
+    .program-item {
+        width: 100%;
+    }
+}
+
+/* Mobile layout design */
+@media(max-width: 480px){
+    .facts-inner {
+        padding: 70px 20px;
+    }
+    .fact-item {
+        padding: 50px;
+    }
+    img.about-img-1 {
+        margin-top: 100px;
+    }
 }
