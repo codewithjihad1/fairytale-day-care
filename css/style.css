@@ -439,7 +439,39 @@ Facility Page Css start
     opacity: 1;
 }
 
-
+/* ===========================
+About us Page css start 
+=========================== */
+.aboutPage-wrap {
+    background: #FAFAFA;
+}
+.aboutPage-inner {
+    display: grid;
+    grid-template-columns: 49% 47.20%;
+    grid-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 20px;
+}
+.aboutPage-content .aboutPage-title h3{
+    color: #1faceb;
+    font-size: 26px;
+    font-weight: 600;
+}
+.aboutPage-content .aboutPage-title h2{
+    color: #333333;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.aboutPage-title{
+    margin-bottom: 20px;
+}
+.aboutPage-desc p{
+    color: #6d6d6d;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 
 
 /* =============================================
@@ -477,6 +509,9 @@ Responsive Layout Design
     .program-info .more-info-btn a {
         padding: 8px 7px;
     }
+    .aboutPage-inner{
+        grid-template-columns: 100%;
+    }
 }
 
 /* small Tablet layout */
@@ -498,3 +533,5 @@ Responsive Layout Design
         margin-top: 100px;
     }
 }
+
+
