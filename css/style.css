@@ -1,7 +1,7 @@
 /* Import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,9 +9,9 @@
 }
 img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
-.common-wrap{
+.common-wrap {
     max-width: 1070px;
     width: 100%;
     margin: 0 auto;
@@ -26,18 +26,16 @@ img {
 
 /* =================Header Section Start================= */
 .header-wrap {
-    box-shadow: 0 0 15px rgba(0,0,0,.25);
     float: left;
     width: 100%;
-    background: #fff;
     position: relative;
     z-index: 99;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,.25);
 }
-.logo{
-    margin: 0 50px;
-}
-.logo img{
+.logo {
     width: 125px;
+    margin: 0 50px;
 }
 .logo::before {
     content: url(../img/logo-bg.png);
@@ -48,31 +46,34 @@ img {
     transform: translateX(-50%);
 }
 .header-inner {
+    padding: 20px 0;
+}
+.header-wrap nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    flex-wrap: wrap;
 }
-.left-menu, .right-menu{
+.left-menu ul, .right-menu ul{
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
-li.nav-links{
+.left-menu ul li, .right-menu ul li {
     position: relative;
-    display: inline-block;
     margin: 0 20px;
 }
-li.nav-links a{
+.left-menu ul li a, .right-menu ul li a {
     text-decoration: none;
     font-size: 18px;
     color: #333333;
     font-weight: 600;
     transition: all 0.3s ease;
 }
-.nav-links.active a,
-.nav-links a:hover {
+nav ul li a:hover, nav ul li.active a {
     color: #1faceb;
 }
-.nav-links a::before{
+nav ul li a::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -83,40 +84,39 @@ li.nav-links a{
     background: #1faceb;
     transition: all 0.3s ease;
 }
-.nav-links a:hover::before,
-.nav-links.active a::before{
+nav ul li a:hover::after, nav ul li.active a::after {
     width: 100%;
 }
 
 
 /* =================Hero Section Start================= */
 .hero-wrap{
+    float: left;
+    width: 100%;
+    min-height: 550px;
+    position: relative;
     background: url(../img/hero-bg.png) no-repeat center bottom;
     background-size: cover;
-    position: relative;
     z-index: 9;
 }
-.hero-inner{
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-wrap .common-wrap {
+    max-width: 300px;
 }
-.hero-note{
-    max-width: 265px;
-    text-align: center
+.hero-text {
+    margin: 150px 0 100px;
+    text-align: center;
 }
-.hero-note .title{
+.hero-text h3{
     font-size: 24px;
     font-weight: bold;
     color: #54b5bc;
 }
-.hero-note .sub-title {
+.hero-text h1 {
     font-size: 24px;
     font-weight: bold;
     color: #ea662b;
 }
-.hero-note p{
+.hero-text p{
     font-size: 14px;
     color: #6d6d6d;
     font-weight: 500;
@@ -124,19 +124,23 @@ li.nav-links a{
 
 /* =================Facts Section Start================= */
 .facts-wrap {
-    background: #7AB6C0;
+    float: left;
+    width: 100%;
     position: relative;
     margin: -15px 0 0;
+    background: #7AB6C0;
     z-index: 0;
 }
 .facts-wrap .common-wrap{
     max-width: 1240px;
 }
-.facts-inner{
+.facts-inner{    
+    padding: 70px 0;
+}
+.fact-item-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 35px;
-    padding: 70px 0;
 }
 .fact-item{
     text-align: center;
@@ -144,8 +148,21 @@ li.nav-links a{
     padding: 50px 60px 70px;
     overflow: hidden;
 }
-.fact-item-img{
-    width: 40px;
+.fact-item .fact-item-thumb{
+    width: 45px;
+    margin: 0 auto 15px;
+}
+.fact-item-content {
+    margin-bottom: 10px;
+}
+.fact-item-content h3 {
+    font-size: 26px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+.fact-item-content p {
+    font-size: 14px;
+    color: #6d6d6d;
 }
 .fact-item .fact-item-bg{
     position: absolute;
@@ -156,34 +173,34 @@ li.nav-links a{
     height: 100%;
     z-index: -1;
 }
-.fact-item .fact-title{
-    font-size: 26px;
-    color: #333333;
-    margin: 5px 0 8px;
-}
-.fact-item .fact-desc{
-    font-size: 14px;
-    color: #6d6d6d;
-}
 
 /* =================About Us Section Start================= */
-/* .aboutus-wrap{} */
+.aboutus-wrap{
+    float: left;
+    width: 100%;
+}
 .about-inner {
+    padding: 80px 0;
+    overflow: hidden;
+}
+.about-img {
+    float: right;
+    width: 60.75%;
     position: relative;
-    margin: 80px auto;
 }
-.about-img > img{
-    width: 60%;
-}
-img.about-img-1 {
-    position: relative;
-    z-index: 1;
-    margin-top: 180px;
-}
-.about-img .about-img-2{
+.about-img .about-img-1::before {
+    content: "";
     position: absolute;
-    right: 0;
-    top: 0;
+    left: -65%;
+    top: 41%;
+    width: 100%;
+    height: 100%;
+    background: url(../img/about-img-2.jpg) no-repeat center center;
+    background-size: cover;
+}
+.about-title {
+    float: left;
+    width: 32%;
 }
 .about-title h2{
     font-size: 40px;
@@ -205,13 +222,16 @@ img.about-img-1 {
     background: #1faceb;
 }
 .about-text {
-    width: 37%;
+    clear: both;
+}
+.about-text p {
     float: right;
-    margin-top: -215px;
+    width: 37%;
     padding-left: 15px;
     position: relative;
+    margin-top: 30px;
 }
-.about-text::before{
+.about-text p::before{
     content: "";
     position: absolute;
     left: 0;
@@ -223,6 +243,8 @@ img.about-img-1 {
 
 /* ===================Our Program Section Start================= */
 .program-wrap {
+    float: left;
+    width: 100%;
     position: relative;
 }
 .program-wrap .program-bg{
@@ -232,8 +254,8 @@ img.about-img-1 {
     width: 100%;
     z-index: -1;
 }
-.program-inner{
-    padding: 50px 20px;
+.program-inner {
+    padding: 80px 0;
 }
 .program-title{
     margin-bottom: 60px;
@@ -255,8 +277,7 @@ img.about-img-1 {
 .program-text {
     padding: 10px;
 }
-
-.program-content{
+.program-item-wrap {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -328,24 +349,36 @@ img.about-img-1 {
     text-transform: uppercase;
 }
 
+/* ===================Maps Section Start================= */
+.maps-wrap {
+    float: left;
+    width: 100%;
+}
+.maps-wrap .common-wrap {
+    max-width: 100%;
+    padding: 0;
+}
+
 /* ===================Footer Section Start================= */
 .footer-wrap {
+    float: left;
+    width: 100%;
     background: #3E3E3E;
 }
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 10px 0;
 }
-.footer-text{
+.footer-text ul {
     list-style: none;
     display: flex;
 }
-.footer-text li{
+.footer-text ul li {
     padding: 0 15px;
     position: relative;
 }
-.footer-text li::before {
+.footer-text ul li::before {
     content: "";
     position: absolute;
     right: 0;
@@ -355,18 +388,17 @@ img.about-img-1 {
     width: 2px;
     background: #fff;
 }
-.footer-text li:last-child:before {
+.footer-text ul li:last-child:before {
     display: none;
 }
-
-.footer-text li a{
+.footer-text ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
-.footer-icon i {
+.footer-social i {
     font-size: 20px;
     color: #fff;
 }
@@ -380,6 +412,8 @@ Facility Page Css start
     width: 100%;
     padding: 50px 0;
     background: #FAFAFA;
+}
+.footer-inner {
 }
 .facility-title{
     margin-bottom: 60px;
@@ -397,12 +431,12 @@ Facility Page Css start
     bottom: -40px;
     transform: translateX(-50%);
 }
-.facility-content{
+.facility-item-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px 50px;
 }
-.facility-content .facility-item{
+.facility-item-wrap .facility-item {
     padding: 10px 10px 60px;
     background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
@@ -420,7 +454,6 @@ Facility Page Css start
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.4s ease;
-    /* transition-delay: .2s; */
 }
 .facility-item .facility-img::before {
     content: "";
@@ -479,37 +512,33 @@ Responsive Layout Design
 ============================================= */
 /* Laptop Layout design */
 @media(max-width: 1024px) {
-    .footer-text {
+    .footer-text ul {
         display: block;
     }
-    .footer-text li::before{
+    .footer-text ul li::before {
         display: none;
     }
-    .footer-text li a{
+    .footer-text ul li a {
         font-size: 12px;
     }
 }
 
 /* Tablet layout design */
 @media(max-width: 768px){    
-    .about-text {
+    .about-title {
         width: 100%;
-        float: none;
-        margin-top: 30px;
+        margin-bottom: 30px;
     }
-    .about-img .about-img-2 {
-        top: 100px;
+    .about-img {
+        margin: 0 0 16%;
     }
-    .program-item {
-        width: 47%;
+    .about-text p {
+        width: 100%;
     }
-    .program-content {
-        background: none;
+    .program-item-wrap {
+        background-image: none;
     }
-    .program-info .more-info-btn a {
-        padding: 8px 7px;
-    }
-    .aboutPage-inner{
+    .aboutPage-inner {
         grid-template-columns: 100%;
     }
 }
@@ -531,6 +560,9 @@ Responsive Layout Design
     }
     img.about-img-1 {
         margin-top: 100px;
+    }
+    .program-wrap .program-bg {
+        height: 220px;
     }
 }
 
