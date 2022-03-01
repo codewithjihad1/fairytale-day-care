@@ -511,13 +511,35 @@ Responsive Layout Design
 ============================================= */
 /* ==========Tablet Layout========= */
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-    
+    .left-menu ul li, .right-menu ul li {
+        margin: 0 15px;
+    }
+    .logo {
+        width: 100px;
+        margin: 0 30px;
+    }
+    .logo::before {
+        top: 83px;
+    }
+    .program-item {
+        width: 44%;
+    }
+    .program-info .more-info-btn a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .footer-text ul li a {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
 }
 
 /* ========Mobile layout design======= */
 @media only screen and (min-width: 320px) and (max-width: 767px){
     .mobi{display: block; }
     .desk{display: none; }
+    .navShow {overflow-y: hidden; }
     .about-title {
         width: 100%;
         margin-bottom: 30px;
@@ -671,6 +693,6 @@ Responsive Layout Design
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
     .program-item {
-        width: 80%;
+        width: 65%;
     }
 }
