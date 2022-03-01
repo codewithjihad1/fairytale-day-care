@@ -23,7 +23,8 @@ img {
     width: 100%;
     overflow: hidden;
 }
-
+.mobi{display: none; }
+.desk{display: block; }
 /* =================Header Section Start================= */
 .header-wrap {
     float: left;
@@ -48,7 +49,7 @@ img {
 .header-inner {
     padding: 20px 0;
 }
-.header-wrap nav {
+.nav-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,20 +61,20 @@ img {
     flex-wrap: wrap;
 }
 .left-menu ul li, .right-menu ul li {
-    position: relative;
     margin: 0 20px;
 }
 .left-menu ul li a, .right-menu ul li a {
+    position: relative;
     text-decoration: none;
     font-size: 18px;
     color: #333333;
     font-weight: 600;
     transition: all 0.3s ease;
 }
-nav ul li a:hover, nav ul li.active a {
+.nav-wrap ul li a:hover, .nav-wrap ul li.active a {
     color: #1faceb;
 }
-nav ul li a::after {
+.nav-wrap ul li a::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -84,7 +85,7 @@ nav ul li a::after {
     background: #1faceb;
     transition: all 0.3s ease;
 }
-nav ul li a:hover::after, nav ul li.active a::after {
+.nav-wrap ul li a:hover::after, .nav-wrap ul li.active a::after {
     width: 100%;
 }
 
@@ -413,8 +414,6 @@ Facility Page Css start
     padding: 50px 0;
     background: #FAFAFA;
 }
-.footer-inner {
-}
 .facility-title{
     margin-bottom: 60px;
 }
@@ -510,21 +509,15 @@ About us Page css start
 /* =============================================
 Responsive Layout Design 
 ============================================= */
-/* Laptop Layout design */
-@media(max-width: 1024px) {
-    .footer-text ul {
-        display: block;
-    }
-    .footer-text ul li::before {
-        display: none;
-    }
-    .footer-text ul li a {
-        font-size: 12px;
-    }
+/* ==========Tablet Layout========= */
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    
 }
 
-/* Tablet layout design */
-@media(max-width: 768px){    
+/* ========Mobile layout design======= */
+@media only screen and (min-width: 320px) and (max-width: 767px){
+    .mobi{display: block; }
+    .desk{display: none; }
     .about-title {
         width: 100%;
         margin-bottom: 30px;
@@ -537,21 +530,21 @@ Responsive Layout Design
     }
     .program-item-wrap {
         background-image: none;
+        justify-content: center;
+    }
+    .program-info .more-info-btn a {
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+    .program-info .age {
+        padding-left: 0;
     }
     .aboutPage-inner {
         grid-template-columns: 100%;
     }
-}
-
-/* small Tablet layout */
-@media(max-width: 650px){
     .program-item {
         width: 100%;
     }
-}
-
-/* Mobile layout design */
-@media(max-width: 480px){
     .facts-inner {
         padding: 70px 20px;
     }
@@ -564,6 +557,120 @@ Responsive Layout Design
     .program-wrap .program-bg {
         height: 220px;
     }
+    .footer-inner {
+        align-items: center;
+    }
+    .footer-text ul {
+        display: block;
+    }
+    .footer-text ul li {
+        padding: 0;
+    }
+    .footer-text ul li::before {
+        display: none;
+    }
+    .footer-text ul li a {
+        font-size: 12px;
+        font-weight: 400;
+    }
+    /* Mobile navigation menu design */
+    .header-wrap .common-wrap {
+        padding: 0;
+    }
+    .header-inner {
+        padding: 0;
+    }
+    .mobi-nav {
+        display: flex; 
+        justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 15px 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        position: relative;
+        z-index: 1;
+    }
+    .mobi-nav .logo {
+        margin: 0;
+        width: 100px;
+    }
+    .mobi-nav .logo::before {
+        display: none;
+    }
+    .mobi-nav .hamburger {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .mobi-nav .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: #333333;
+        transition: .3s ease-in-out;
+    }
+    .navShow .hamburger div {
+        background: transparent;
+    }
+    .mobi-nav .hamburger > div::before, .mobi-nav .hamburger > div::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: #333333;
+        transition: .3s ease-in-out;
+    }
+    .mobi-nav .hamburger > div::before {
+        top: -7px;
+        left: 0;
+    }
+    .mobi-nav .hamburger > div::after {
+        bottom: -7px;
+        left: 0;
+    }
+    .navShow .hamburger > div::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .navShow .hamburger > div::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    /* Mobile menu */
+    .nav-wrap {
+        display: block;
+        min-height: calc(100vh - 80px);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        transform: translateX(-200%);
+        width: 100%;
+        background: #fff;
+        transition: .4s ease-in-out;
+    }
+    .navShow .nav-wrap {
+        transform: translateX(0);
+    }
+    .left-menu ul, .right-menu ul {
+        display: block;
+    }
+    .nav-wrap li a::after {
+        bottom: -5px;
+    }
+    .left-menu ul li, .right-menu ul li {
+        margin: 10px 20px;
+        text-align: center;
+    }
+    .nav-wrap ul li a::after {
+        bottom: -5px;
+    }
 }
-
-
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    .program-item {
+        width: 80%;
+    }
+}
